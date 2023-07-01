@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+
+import { useLayoutStore } from './store/useLayoutStore.ts';
+
+const counterStore = useLayoutStore();
+
+const increment = () => {
+  counterStore.increment();
+};
 </script>
 
 <template>
@@ -11,7 +19,17 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <router-link to="/">Home</router-link>
+  <router-link to="/about">About</router-link>
+  <router-link to="/contact">Contact</router-link>
+
+  <div>
+    <p>Count: {{ counterStore.count }}</p>
+    <button @click="increment">Increment</button>
+  </div>
+
+  <router-view></router-view>
+  <HelloWorld msg="Vite +                                                                                                      Vue" />
 </template>
 
 <style scoped>
