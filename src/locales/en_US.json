@@ -1,4 +1,16 @@
 {
-  "greeting": "Hello!",
-  "welcome": "Welcome to my app!"
+  "menu": {
+    "productRange": "Product Range",
+    "buying": "Buying",
+    "ownership": "Ownership",
+    "discover": "Discover",
+    "about": "About Us",
+    "electricGolfCar": "Electric Golf Car",
+    "electricCar": "Electric Car",
+    "gasolineCar": "Gasoline Car",
+    "motorcycleSeries": "Motorcycle Series",
+    "g100ElectricSeries": "G100 Electric Series",
+    "gasolinePoweredSeries": "Gasoline-powered Series",
+    "otherProducts": "Other Products"
+  }
 }

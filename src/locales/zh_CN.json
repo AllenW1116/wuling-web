@@ -1,4 +1,16 @@
 {
-  "greeting": "你好！",
-  "welcome": "欢迎来到我的应用！"
+  "menu": {
+    "productRange": "产品范围",
+    "buying": "购买",
+    "ownership": "所有权",
+    "discover": "探索",
+    "about": "关于我们",
+    "electricGolfCar": "电动高尔夫车",
+    "electricCar": "电动汽车",
+    "gasolineCar": "汽油汽车",
+    "motorcycleSeries": "摩托车系列",
+    "g100ElectricSeries": "G100电动系列",
+    "gasolinePoweredSeries": "汽油动力系列",
+    "otherProducts": "其他产品"
+  }
 }

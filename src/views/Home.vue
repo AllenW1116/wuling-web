@@ -1,61 +1,103 @@
 <script setup lang="ts">
 
+import NavBar from "../components/NavBar.vue";
 </script>
 
 <template>
-  <el-menu mode="horizontal" background-color="#333" text-color="#fff" active-text-color="#ffd04b">
-    <el-menu-item index="home">首页</el-menu-item>
-    <el-menu-item index="cars">车辆</el-menu-item>
-    <el-menu-item index="services">服务</el-menu-item>
-    <el-menu-item index="contact">联系我们</el-menu-item>
-  </el-menu>
+  <body>
+    <div class="container flex-column">
+      <div class="placeholder-v1350"></div>
+      <div>
+        <NavBar/>
+        <div class="block text-center">
+          <el-carousel height="500px">
+            <el-carousel-item v-for="item in 4" :key="item">
+              <h3 class="small justify-center" text="2xl">{{ item }}</h3>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home <br>
+        Home
+        Home
+      </div>
+
+    </div>
+
+  </body>
+  <Footer/>
 </template>
 
 <style scoped>
-/* 导航栏样式 */
-.el-menu {
-  border: none;
-  padding: 0 20px;
-}
 
-.el-menu-item {
-  line-height: 60px;
-  padding: 0 15px;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
 
-.el-menu-item:hover {
-  background-color: #555;
-}
 
-.el-menu-item.is-active {
-  background-color: #555;
-}
+  .el-carousel__item h3 {
+    color: #475669;
+    opacity: 0.75;
+    line-height: 150px;
+    margin: 0;
+    text-align: center;
+  }
 
-/* 全局样式 */
-body {
-  font-family: Arial, sans-serif;
-}
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
+  .el-carousel__item:nth-child(2n + 1) {
+    background-color: #d3dce6;
+  }
 
-h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+  .placeholder-v1350 {
+    width: 1350px;
+    height: 20px;
+  }
 
-p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-/* 其他样式 */
-/* 自定义样式根据需求进行添加 */
+  .container {
+  }
 </style>

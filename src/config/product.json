@@ -1,0 +1,210 @@
+{
+  "Electric-Golf-Car": {
+    "name": "Electric Golf Car",
+    "i18n name": "menu.electricGolfCar",
+    "types": {
+      "T300-Lifted": {
+        "name": "T300 Lifted",
+        "img": "/product/T200.jpg"
+      },
+      "T200": {
+        "name": "T200",
+        "img": "/product/T200.jpg"
+      },
+      "WLDT24": {
+        "name": "WLDT24",
+        "img": "/product/T200.jpg"
+      },
+      "WLDT26": {
+        "name": "WLDT26",
+        "img": "/product/T200.jpg"
+      },
+      "WLDT2": {
+        "name": "WLDT2",
+        "img": "/product/T200.jpg"
+      },
+      "WLDT242": {
+        "name": "WLDT242",
+        "img": "/product/T200.jpg"
+      },
+      "WLDT262": {
+        "name": "WLDT262",
+        "img": "/product/T200.jpg"
+      }
+    }
+  },
+  "Electric-Car": {
+    "name": "Electric Car",
+    "id": 1,
+    "i18n name": "menu.electricCar",
+    "types": {
+      "V510": {
+        "name": "V510",
+        "img": "/product/T200.jpg"
+      },
+      "WLD2111": {
+        "name": "WLD2111",
+        "img": "/product/T200.jpg"
+      },
+      "WLD2082": {
+        "name": "WLD2082",
+        "img": "/product/T200.jpg"
+      },
+      "GLDL-19": {
+        "name": "GLDL-19",
+        "img": "/product/T200.jpg"
+      },
+      "WLD2060": {
+        "name": "WLD2060",
+        "img": "/product/T200.jpg"
+      }
+    }
+  },
+  "Gasoline-Car": {
+    "name": "Gasoline Car",
+    "id": 2,
+    "i18n name": "menu.gasolineCar",
+    "types": {
+      "WLQ5080": {
+        "name": "WLQ5080",
+        "img": "/product/T200.jpg"
+      },
+      "WLQ5110": {
+        "name": "WLQ5110",
+        "img": "/product/T200.jpg"
+      },
+      "WLQ9140-14": {
+        "name": "WLQ9140-14",
+        "img": "/product/T200.jpg"
+      },
+      "GLQQ": {
+        "name": "GLQQ",
+        "img": "/product/T200.jpg"
+      }
+    }
+  },
+  "Motorcycle-Series": {
+    "name": "Motorcycle Series",
+    "id": 3,
+    "i18n name": "menu.motorcycleSeries",
+    "types": {
+      "Q30": {
+        "name": "Q30",
+        "img": "/product/T200.jpg"
+      },
+      "P20/P20A": {
+        "name": "P20/P20A",
+        "img": "/product/T200.jpg"
+      }
+    }
+  },
+  "G100-Electric-Series": {
+    "name": "G100 Electric Series",
+    "id": 4,
+    "i18n name": "menu.g100ElectricSeries",
+    "types": {
+      "Wuling-EV50": {
+        "name": "Wuling EV50",
+        "img": "/product/T200.jpg"
+      },
+      "Refrigerator-Van-E": {
+        "name": "Refrigerator Van(E Type)",
+        "img": "/product/T200.jpg"
+      },
+      "G100P-Electric-Truck": {
+        "name": "G100P Electric Truck",
+        "img": "/product/T200.jpg"
+      },
+      "Electric-Cargo-Van": {
+        "name": "Electric Cargo Van",
+        "img": "/product/T200.jpg"
+      }
+    }
+  },
+  "Gasoline-powered-Series": {
+    "name": "Gasoline-powered Series",
+    "id": 5,
+    "i18n name": "menu.gasolinePoweredSeries",
+    "types": {
+      "Rongguang-Single-cabin": {
+        "name": "Rongguang-Single-cabin",
+        "img": "/product/T200.jpg"
+      },
+      "Rongguang-New-Truck-Single-cabin": {
+        "name": "Rongguang New Truck-Single-cabin",
+        "img": "/product/T200.jpg"
+      },
+      "Rongguang-Double-cabin": {
+        "name": "Rongguang-Double-cabin",
+        "img": "/product/T200.jpg"
+      },
+      "Rongguang-New-Truck-Double-cabin": {
+        "name": "Rongguang New Truck-Double-cabin",
+        "img": "/product/T200.jpg"
+      },
+      "Rongguang-New-Truck-Rear-dual-tire": {
+        "name": "Rongguang New Truck-Rear dual-tire",
+        "img": "/product/T200.jpg"
+      },
+      "Rongguang-Truck": {
+        "name": "Rongguang Truck",
+        "img": "/product/T200.jpg"
+      },
+      "Rongguang-New-Truck-Double-cabin2": {
+        "name": "Rongguang New Truck-Double-cabin2",
+        "img": "/product/T200.jpg"
+      },
+      "Sunshine-box-truck": {
+        "name": "Sunshine-box truck",
+        "img": "/product/T200.jpg"
+      },
+      "Rongguang-garbage-truck": {
+        "name": "Rongguang-garbage truck",
+        "img": "/product/T200.jpg"
+      },
+      "Rongguang-L-Ambulance": {
+        "name": "Rongguang-L-Ambulance",
+        "img": "/product/T200.jpg"
+      }
+    }
+  },
+  "Other-Products": {
+    "name": "Other Products",
+    "id": 6,
+    "i18n name": "menu.otherProducts",
+    "types": {
+      "G050": {
+        "name": "G050",
+        "img": "/product/T200.jpg"
+      },
+      "6m-High-First-Class-Highway-Bus": {
+        "name": "6m High First Class Highway Bus",
+        "img": "/product/T200.jpg"
+      },
+      "Caravan5.5m-Kindergarten-Bus": {
+        "name": "Caravan5.5m Kindergarten Bus",
+        "img": "/product/T200.jpg"
+      },
+      "Fire-Engine": {
+        "name": "Fire Engine",
+        "img": "/product/T200.jpg"
+      },
+      "Medium-Highway-Bus": {
+        "name": "Medium Highway Bus",
+        "img": "/product/T200.jpg"
+      },
+      "Refitted-Bus-Series": {
+        "name": "Refitted Bus Series",
+        "img": "/product/T200.jpg"
+      },
+      "Wuling-6m-Command-Car": {
+        "name": "Wuling 6m Command Car",
+        "img": "/product/T200.jpg"
+      },
+      "Electric-surfboard": {
+        "name": "Electric surfboard",
+        "img": "/product/T200.jpg"
+      }
+    }
+  }
+}
