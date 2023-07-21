@@ -1,4 +1,5 @@
 <template>
+  <!-- 顶部bar的具体设置 - Done -->
   <div id="overlay"></div>
   <div class="place-holder-100" />
   <div class="menu-container">
@@ -6,7 +7,7 @@
       <div class="submenu-container">
         <div class="logo-container">
           <a href="/">
-            <img src="/wuling_logo.jpg" class="logo nav-logo" alt="wuling logo" />
+            <img src="/images/wuling_logo.jpg" class="logo nav-logo" alt="wuling logo" />
           </a>
         </div>
         <div class="flex-grow"></div>
@@ -23,55 +24,78 @@
     </el-menu>
   </div>
 
-
+  <!-- Product Range 具体设置 -->
   <div id="product-menu" class="products-container hover-overlay">
     <el-menu mode="horizontal" background-color="transparent" text-color="#333" active-text-color="#333" :ellipsis="false" >
       <div class="submenu-container" >
         <el-menu-item class="flex-column product-type-container hover-red" v-for="(value, key) in menuData" :key="key" :id="key" >
-          <img src="/product/T200.jpg" class="product-type-img" alt="wuling logo"/>
+          <!-- 以第一个型号的图片作为默认展示 -->
+          <img :src="Object.values(value.types)[0].img" class="product-type-img" alt="wuling logo"/>
           <span>{{ $t(value['i18n name'] as unknown as string) }}</span>
         </el-menu-item>
       </div>
     </el-menu>
   </div>
 
-
+  <!-- Product Range - Electric Golf Car 的具体设置 -->
+  <!-- 遍历产品类别 -->
   <div v-for="(category, key) in menuData" :id="'category-'+key" class="category-container hover-overlay">
     <el-menu mode="vertical" background-color="transparent" text-color="#333" active-text-color="#333" :ellipsis="false" >
       <div class="flex-row">
+        <!-- 遍历该类别下的全部产品型号 -->
         <div class="flex-column category-items" >
-          <el-menu-item class="hover-background-red" v-for="type in Object.keys(category['types'])">
-            <img src="/product/T200.jpg" class="product-type-img" alt="wuling logo"/>
-            <span> {{ type }} </span>
+          <el-menu-item class="hover-background-red" v-for="(type, typeKey) in category['types']" :key="typeKey" @mouseover="selectedType = type" @mouseleave="selectedType = null" @click="goToPage(key, typeKey)">
+            <!-- <img :src="type.img" class="product-type-img" alt="wuling logo" @click="goToPage(key, typeKey)"/>
+            <span @click="goToPage(key, typeKey)"> {{ type.name }} </span> -->
+            <img :src="type.img" class="product-type-img" alt="wuling logo" />
+            <span> {{ type.name }} </span>
           </el-menu-item>
         </div>
-        <div class="category-detail flex-column">
-          <img src="/product/cargo_van.jpg" class="product-category-img"/>
-          <span class="product-name">Electric Lifted Golf Car</span>
-          <div class="product-detail-data flex-column">
-            <div>
-              <span class="red-background">The official guide price</span>  <span> $29,800</span>
-            </div>
-            <div>
-              <span class="red-background">Dimension Length/width/height</span>  <span> 4875×1880×1700 mm</span>
-            </div>
-            <div>
-              <span class="red-background">Power</span>  <span> 1.2L+6MT/1.5L+6MT/1.5L+ hand self integration</span>
-            </div>
-          </div>
+        <!-- 遍历每个产品型号的细节 大图、价格、大小、功率-->
+        <div class="flex-row category-detail" v-if="selectedType" >
+          <img :src="selectedType.img" class="product-category-img" alt="wuling logo"/>
+            <div class="flex-column">
+              <div>
+                <span class="product-name">{{ selectedType.name }}</span>
+              </div>
+              <div class="product-detail-data">
+                <div>
+                  <span class="red-background">The official guide price</span>  <span> {{ selectedType.price }}</span>
+                </div>
+                <div>
+                  <span class="red-background">Dimension Length/width/height</span>  <span> {{ selectedType.dimension }}</span>
+                </div>
+                <div>
+                  <span class="red-background">Power</span>  <span> {{ selectedType.power }}</span>
+                </div>
+              </div> 
+            </div> 
         </div>
       </div>
     </el-menu>
   </div>
-
-
 </template>
 
 <script setup lang="ts">
+// 鼠标悬停
+import { ref } from 'vue';
+const selectedType = ref(null);
+
+// 鼠标点击跳转页面
+import { useRouter } from 'vue-router';
+const router = useRouter();
+const goToPage = (category, type) => {
+  // router.push({ name: 'ProductDetails', params: { id: id } })
+  // router.push({ path: '/ProductDetails/' + name })
+  router.push({ path: '/ProductDetails/' + category + '/' + type });
+};
+
+
 // 导入 JSON 数据
 import jsonData from '../config/product.json';
 
 // 定义 JSON 数据的类型
+/*
 interface MenuData {
   [category: string]: {
     [product: string]: {
@@ -79,6 +103,25 @@ interface MenuData {
     };
   };
 }
+*/
+
+interface MenuData {
+  [category: string]: {
+    name: string;
+    "i18n name": string;
+    id?: number;
+    types: {
+      [typeName: string]: {
+        name: string;
+        img: string;
+        price?: string;
+        dimension?: string;
+        power?: string;
+      }
+    };
+  };
+}
+
 
 // 读取并打印 JSON 数据
 const menuData: MenuData = jsonData;
@@ -95,9 +138,6 @@ for (const category in menuData) {
 }
 
 console.log(i18nNameList)
-
-
-
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -156,12 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
-
-
 });
-
-
 </script>
 
 <style scoped>
@@ -230,6 +265,7 @@ p {
 
 .product-category-img {
   width: 100%;
+  /* width: 350px; */
   height: 350px;
 }
 
@@ -332,15 +368,30 @@ p {
 }
 
 .product-detail-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 主轴为垂直方向，所以使得元素在垂直方向上居中 */
   text-align: left;
+  width: 1000px;
+  height: 100%; /* 确保元素占据全部高度，可以根据你的需求调整 */
 }
 
 .category-items {
   width: 350px;
 }
 
+.category-detail{
+  width: 550px;
+}
+
 .product-name {
   font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 主轴为垂直方向，所以使得元素在垂直方向上居中 */
+  text-align: center; /* 文本居中对齐 */
+  width: 300px;
+  height: 600%; /* 确保元素占据全部高度，可以根据你的需求调整 */
 }
 
 .red-background {
